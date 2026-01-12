@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Wavelength Dial</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #0b1325, #050812);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+    color: white;
+  }
+
+  .container {
+    width: 320px;
+    text-align: center;
+  }
+
+  .clue {
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dial {
+    position: relative;
+    width: 260px;
+    height: 130px;
+    margin: auto;
+    border-radius: 260px 260px 0 0;
+    background: linear-gradient(to right, #2a5bd7, #ff5c7a);
+    overflow: hidden;
+  }
+
+  .dial::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    background: #0b1325;
+    border-radius: 260px 260px 0 0;
+  }
+
+  .needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    height: 120px;
+    background: #38bdf8;
+    transform-origin: bottom;
+    transform: rotate(30deg);
+    z-index: 5;
+  }
+
+  .center {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 26px;
+    background: #38bdf8;
+    border-radius: 50%;
+    z-index: 6;
+  }
+
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  .score {
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #fbbf24;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="clue">SUITCASE</div>
+
+  <div class="dial">
+    <div class="needle"></div>
+    <div class="center"></div>
+  </div>
+
+  <div class="labels">
+    <span>Soft</span>
+    <span>Hard</span>
+  </div>
+
+  <div class="score">3 points!</div>
+</div>
+
+</body>
+</html>
